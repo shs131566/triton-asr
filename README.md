@@ -10,17 +10,19 @@ Triton backend for ASR(Automatic Speech Recognition). The goal of Triton ASR is 
 
 - clustering: AgglomerativeClustering
 # Quick start
-1. download [pyannote/wespeaker-voxceleb-resnet34-LM](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM) for embedding model.
+1. `pip install -r requirements.txt`
+
+2. download [pyannote/wespeaker-voxceleb-resnet34-LM](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM) for embedding model.
 
 ```bash
 python model_download.py
 ```
-2. Run docker compose
+3. Run docker compose
 ```bash
 docker compose --profile inference up --build -d
 ```
 
-3. Test infernence server
+4. Test infernence server
 In server/inference_test.py change your sample auido file path at line 9
 ``` python
 url = "localhost:8000"
