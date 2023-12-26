@@ -6,7 +6,7 @@ import tritonhttpclient
 from tritonclient.http import InferenceServerClient
 
 url = "localhost:8000"
-audio_path = ""
+audio_path = "SAMPLE_AUDIO_FILE"
 model_name = "whisper-large"
 
 triton_client = InferenceServerClient(url=url, network_timeout=3600)
