@@ -53,11 +53,15 @@ class TritonPythonModel:
                     embedding = self.model(audio_segment)
                     embeddings.append(embedding.detach().cpu().numpy())
 
-                cluster_model = AgglomerativeClustering()
-                clusters = cluster_model.cluster(np.vstack(embeddings))
+                logger.info(f"Embeddings: {embeddings}")
+                if len(embeddings) == 1:
+                    transcripts["segments"][0]["speaker"] = 0
+                else:
+                    cluster_model = AgglomerativeClustering()
+                    clusters = cluster_model.cluster(np.vstack(embeddings))
 
-                for i, transcript in enumerate(transcripts["segments"]):
-                    transcript["speaker"] = int(clusters[i])
+                    for i, transcript in enumerate(transcripts["segments"]):
+                        transcript["speaker"] = int(clusters[i])
 
                 inference_response = pb_utils.InferenceResponse(
                     output_tensors=[
