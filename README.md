@@ -1,6 +1,14 @@
 # Triton ASR
-Triton backend for ASR(Automatic Speech Recognition). The goal of Triton ASR is to let you serve ASR models written in Python by Triton Inference Server. The ASR models includes tasks such as recognition, speaker separation, and sentence segmentation.
+Triton backend for ASR(Automatic Speech Recognition). The goal of Triton ASR is to let you serve ASR models written in Python by Triton Inference Server. The ASR models includes tasks such as recognition, speaker diarization, and sentence segmentation.
 
+## Recognition: Whisper
+- [large-v2](https://github.com/m-bain/whisperX)
+- [large-v3](https://github.com/openai/whisper)
+
+## Speaker diarization
+- [embedding](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM/tree/main)
+
+- clustering: AgglomerativeClustering
 # Quick start
 1. download [pyannote/wespeaker-voxceleb-resnet34-LM](https://huggingface.co/pyannote/wespeaker-voxceleb-resnet34-LM) for embedding model.
 
