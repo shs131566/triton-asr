@@ -1,0 +1,4 @@
+git+https://github.com/m-bain/whisperx.git@d97cdb7bcf302fb3e1651321a5935f90594e994c
+loguru==0.7.2
+whisper-timestamped==1.14.1
+auditok==0.2.0

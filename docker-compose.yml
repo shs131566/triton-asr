@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  inference-server:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: inference-server
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+      - SHM_SIZE=${SHM_SIZE:-1g}
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    volumes:
+      - /home/hyunsoo.son/Kasper/server/models/:/models
+    shm_size: "10gb"
+    profiles: ["inference"]
