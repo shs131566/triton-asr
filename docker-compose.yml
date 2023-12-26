@@ -8,7 +8,7 @@ services:
     image: inference-server
     runtime: nvidia
     environment:
-      - NVIDIA_VISIBLE_DEVICES=0
+      - NVIDIA_VISIBLE_DEVICES=all
       - SHM_SIZE=${SHM_SIZE:-1g}
     ports:
       - "8000:8000"
