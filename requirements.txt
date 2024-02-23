@@ -2,3 +2,6 @@ git+https://github.com/m-bain/whisperx.git@d97cdb7bcf302fb3e1651321a5935f90594e9
 loguru==0.7.2
 whisper-timestamped==1.14.1
 auditok==0.2.0
+tritonclient==2.42.0
+gevent==23.9.1
+geventhttpclient==2.0.11
